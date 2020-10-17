@@ -1,8 +1,8 @@
-#!bin/bash
+#!/bin/bash
 
 FICH=/root/contenidoraiz
 
-if [ $? == 0] then
-    touch $FICH
-    ls / >> $FICH
+if [ $? == 0 ]; then
+    sh -c "touch $FICH"
+    sh -c "ls / >> $FICH"
 fi

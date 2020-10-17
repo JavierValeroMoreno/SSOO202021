@@ -25,7 +25,7 @@ function do_menu(){
     esac
 }
 
-while [ "$opcion" != "0" ] do
+while [ "$opcion" != "0" ]; do
 
     menu
     read opcion

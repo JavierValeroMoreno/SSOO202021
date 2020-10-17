@@ -1,18 +1,17 @@
-#!bin/bash
+#!/bin/bash
 
 ID=$(id -u)
 
-if [ "$ID" != "0"] then
+if [ "$ID" != "0" ]; then
 
     TEMP=$PWD
-    echo "Este script requiere de privilegios de root para leer /etc/shadow. Introduzca su contraseña" && su -c
-    "$TEMP/$0" -l
+    echo "Este script requiere de privilegios de root para leer /etc/shadow"
 fi
-if [ "$ID" == "0"] then
+if [ "$ID" == "0" ]; then
     echo "Mostramos /etc/passwd"
-    cat /etc/passwd
+    sh -c "cat /etc/passwd"
     echo "Pulse enter para continuar"
-    read enter
+    sh -c "read enter"
     echo "Mostramos /etc/shadow"
-    cat /etc/shadow
+    sh -c "cat /etc/shadow"
 fi
